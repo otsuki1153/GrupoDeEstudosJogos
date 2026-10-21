@@ -1,0 +1,25 @@
+[gd_scene format=3 uid="uid://cfruodk5ijbyw"]
+
+[ext_resource type="Texture2D" uid="uid://dxymf32jdku8r" path="res://icon.svg" id="1_5mj4t"]
+[ext_resource type="Script" uid="uid://c4muhelyw1e1t" path="res://Characters/player.gd" id="1_eovys"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_h4d6h"]
+size = Vector2(128, 129)
+
+[node name="Player" type="CharacterBody2D" unique_id=421819891]
+scale = Vector2(0.5, 0.5)
+script = ExtResource("1_eovys")
+maxSpeedWalk = 300.0
+speed = 1800.0
+gravity = 1800.0
+jumpForce = 800.0
+coyote_time = 0.2
+buff_time = 0.12
+jump_cut = 0.4
+
+[node name="Sprite" type="Sprite2D" parent="." unique_id=780530202]
+texture = ExtResource("1_5mj4t")
+
+[node name="Collision" type="CollisionShape2D" parent="." unique_id=621462334]
+position = Vector2(0, -0.5)
+shape = SubResource("RectangleShape2D_h4d6h")

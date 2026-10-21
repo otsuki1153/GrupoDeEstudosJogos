@@ -1,0 +1,55 @@
+[gd_scene format=3 uid="uid://d2uiyo8w0uc2d"]
+
+[ext_resource type="PackedScene" uid="uid://cfruodk5ijbyw" path="res://Characters/player.tscn" id="1_ehwxj"]
+[ext_resource type="Texture2D" uid="uid://dxymf32jdku8r" path="res://icon.svg" id="1_jfhif"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_ehwxj"]
+size = Vector2(1150.5, 59)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_jfhif"]
+size = Vector2(1154, 79)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_kgoxk"]
+size = Vector2(55, 506)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_bxloq"]
+size = Vector2(46, 506)
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_t0mwj"]
+size = Vector2(443, 23.75)
+
+[node name="Principal" type="Node2D" unique_id=1251192085]
+
+[node name="BackGround" type="StaticBody2D" parent="." unique_id=654956751]
+position = Vector2(576, 324)
+
+[node name="TETO" type="CollisionShape2D" parent="BackGround" unique_id=519634452]
+position = Vector2(0.75, -294)
+shape = SubResource("RectangleShape2D_ehwxj")
+
+[node name="CHAO" type="CollisionShape2D" parent="BackGround" unique_id=1527100005]
+position = Vector2(-1, 281)
+shape = SubResource("RectangleShape2D_jfhif")
+
+[node name="PAREDE_R" type="CollisionShape2D" parent="BackGround" unique_id=2145530092]
+position = Vector2(549, -12)
+shape = SubResource("RectangleShape2D_kgoxk")
+
+[node name="PAREDE_L" type="CollisionShape2D" parent="BackGround" unique_id=2052041233]
+position = Vector2(-554, -13)
+shape = SubResource("RectangleShape2D_bxloq")
+
+[node name="Plataforma" type="CollisionShape2D" parent="BackGround" unique_id=1275690120]
+position = Vector2(-36, 140)
+shape = SubResource("RectangleShape2D_t0mwj")
+metadata/_edit_group_ = true
+
+[node name="Sprite2D" type="Sprite2D" parent="BackGround/Plataforma" unique_id=506101437]
+position = Vector2(1.5258789e-05, 0.3750267)
+scale = Vector2(3.4687502, 0.16406251)
+texture = ExtResource("1_jfhif")
+
+[node name="Player" parent="." unique_id=421819891 instance=ExtResource("1_ehwxj")]
+position = Vector2(357, 277)
+maxSpeedRun = 600.0
+dashSpeed = 700.0
